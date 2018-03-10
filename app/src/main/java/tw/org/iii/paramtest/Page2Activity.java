@@ -9,11 +9,15 @@ import android.widget.TextView;
 
 public class Page2Activity extends AppCompatActivity {
     private TextView tv;
+    private MainApp mainApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
+
+        mainApp = (MainApp)getApplication();
+        Log.v("brad", "page2:myrand=" + mainApp.myrand);
 
         tv = findViewById(R.id.tv);
 

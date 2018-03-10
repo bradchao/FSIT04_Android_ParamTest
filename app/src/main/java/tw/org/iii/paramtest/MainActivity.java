@@ -7,11 +7,20 @@ import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    private MainApp mainApp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainApp = (MainApp) getApplication();
+        Log.v("brad", "MainActivity:myrand = " + mainApp.myrand);
+
+        mainApp.myrand = (int)(Math.random()*49+1);
+        Log.v("brad", "MainActivity:myrand = " + mainApp.myrand);
+
     }
 
     public void gotoPage2(View view) {
