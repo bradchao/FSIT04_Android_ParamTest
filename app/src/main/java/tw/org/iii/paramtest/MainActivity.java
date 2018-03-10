@@ -20,13 +20,21 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("name", "Brad");
         intent.putExtra("stage", 4);
         intent.putExtra("sound", true);
-        startActivity(intent);
+        //startActivity(intent);
+        startActivityForResult(intent, 412);
     }
 
     public void gotoPage3(View view) {
         Intent intent =
                 new Intent(this, Page3Activity.class);
-        startActivity(intent);
+        //startActivity(intent);
+        startActivityForResult(intent, 174);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.v("brad", "onActivityResult");
     }
 
     @Override
