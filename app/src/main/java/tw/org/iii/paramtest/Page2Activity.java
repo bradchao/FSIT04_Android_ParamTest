@@ -3,6 +3,8 @@ package tw.org.iii.paramtest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class Page2Activity extends AppCompatActivity {
@@ -24,6 +26,17 @@ public class Page2Activity extends AppCompatActivity {
             "Stage: " + stage + "\n" +
             "Sound: " + (sound?"On":"Off"));
 
-    
+
+    }
+
+    public void test2(View view) {
+        int rand = (int)(Math.random()*49+1);
+        Log.v("brad", "page2: rand = " + rand);
+        //setResult(RESULT_OK);
+
+        Intent intent = new Intent();
+        intent.putExtra("rand", rand);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

@@ -34,7 +34,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.v("brad", "onActivityResult");
+        Log.v("brad", "onActivityResult:" + resultCode);
+
+        if (resultCode == RESULT_OK &&
+                requestCode == 412){
+            int rand = data.getIntExtra("rand", -1);
+            Log.v("brad", "OK:" + rand);
+        }else {
+            Log.v("brad", "XX");
+        }
+
     }
 
     @Override
